@@ -56,7 +56,7 @@ export default function LoginPage() {
 
         if (authError) throw authError;
 
-        // Set a cookie so the Next.js middleware can read it for route protection
+        // Set a cookie so the Next.js proxy can read it for route protection
         if (data.session) {
           document.cookie = `ics_admin_logged_in=true; path=/; max-age=${data.session.expires_in}`;
           router.push('/admin');
